@@ -28,7 +28,7 @@ The "Labeddit" project aims to build a fullstack website, with a frontend of a s
 https://labeddit-joaoneiva.surge.sh/
 
 ## How to run the front-end project:
-The app is already deployed, but if you want to run the project in your machine, follow these steps:
+The app's front-end is already deployed, but if you want to run the project in your machine, follow these steps:
 
 ```bash
 # Clone the project's repository:
@@ -47,7 +47,6 @@ The app is already deployed, but if you want to run the project in your machine,
 ```
 
 ## How to run the back-end project:
-The app is already deployed, but if you want to run the project in your machine, follow these steps:
 
 ```bash
 # Clone the project's repository, (if not already done in the front-end instructions):
