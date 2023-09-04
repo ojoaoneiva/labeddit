@@ -28,12 +28,16 @@ The app is already deployed, but if you want to run the project in your machine,
 ```bash
 # Clone the project's repository:
     git clone https://github.com/ojoaoneiva/labeddit.git
+
 # Enter the front-end paste:
     cd front-end
+
 # Install the app's dependencies:
     npm i
+
 # Run the application:
     npm run start
+
 # The server will start on localhost:3000
 ```
 
@@ -43,12 +47,16 @@ The app is already deployed, but if you want to run the project in your machine,
 ```bash
 # Clone the project's repository, (if not already done in the front-end instructions):
     git clone https://github.com/ojoaoneiva/labeddit.git
+
 # Enter the back-end paste:
     cd back-end
+
 # Install the app's dependencies:
     npm i
+
 # Run the application in developpement mode:
     npm run dev
+
 # The server will start on localhost:3003
 ```
 
