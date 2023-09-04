@@ -1,11 +1,12 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
-## [Documentação da API](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
-## [Repositório Front-end](https://github.com/ojoaoneiva/labeddit/tree/main/front-end)
-## [Repositório Back-end](https://github.com/ojoaoneiva/labeddit/tree/main/back-end)
+Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
+[Front-end repository](https://github.com/ojoaoneiva/labeddit/tree/main/front-end)
+[Back-end repository](https://github.com/ojoaoneiva/labeddit/tree/main/back-end)
 
 ## About:
 The "Labeddit" project aims to build a fullstack website, with a frontend of a small social media plataform and its backend applicaction that builds an API with data source for users, posts, post's comments and likes. The front-end is mobile-first and consists on three pages: Home, login and signup, following the design provided by Figma.
+
 ---
 
 ## Functionalities:
