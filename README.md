@@ -13,13 +13,17 @@ https://labeddit-joaoneiva.surge.sh/
 ## Images:
 
 Login
+
 ![login](https://github.com/ojoaoneiva/labeddit/assets/122841627/8a25f135-a40a-4425-9427-09e7c0860024)
 
 Sign Up
+
 ![signup](https://github.com/ojoaoneiva/labeddit/assets/122841627/79546f4f-48b8-4c57-aa4b-011055b2f65e)
 
 Posts
+
 ![home](https://github.com/ojoaoneiva/labeddit/assets/122841627/bb4f37fd-9c20-4063-9a7d-d682cc9220a6)
 
 Comments
+
 ![comments](https://github.com/ojoaoneiva/labeddit/assets/122841627/4d34b583-0d42-44d0-b492-5089ea7dfc07)
