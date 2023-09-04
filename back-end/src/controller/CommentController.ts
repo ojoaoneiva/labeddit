@@ -1,13 +1,7 @@
 import { Request, Response } from 'express';
 import { ZodError } from "zod";
-import { CreatePostOutput, CreatePostSchema } from "../dtos/post/createPost.dto";
 import { BaseError } from "../erros/BaseError";
 import { CommentBusiness } from '../business/CommentBusiness'
-import { PostBusiness } from '../business/PostBusiness';
-import { GetPostSchema } from '../dtos/post/getPost.dto';
-import { EditPostSchema } from '../dtos/post/editPost.dto';
-import { DeletePostSchema } from '../dtos/post/deletePost.dto';
-import { LikeOrDislikePostSchema } from '../dtos/post/likeOrDislikePost.dto';
 import { GetCommentSchema } from '../dtos/comment/getComment.dto';
 import { CreateCommentSchema } from '../dtos/comment/createComment.dto';
 import { LikeOrDislikeCommentSchema } from '../dtos/comment/likeOrDislikeComment.dto';

@@ -6,16 +6,14 @@ export const HeaderButton = styled.button`
     border: none;
     background-color: transparent;
     align-items: center;
-    /* font-family: Noto Sans; */
     font-size: 18px;
     font-weight: 600;
-    line-height: 50px;
-    letter-spacing: 0em;
     color: #4088CB;
 `;
 
 export const Container = styled.div`
-  padding: 20px;
+  height: 100vh;
+  padding: 10%;
 `;
 
 export const CommentList = styled.ul`
@@ -25,9 +23,10 @@ export const CommentList = styled.ul`
 
 export const CommentItem = styled.li`
   margin-bottom: 20px;
-  background-color: #f0f0f0; /* Gray background */
+  background-color: #FBFBFB;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 12px;
+  border: 1px solid #E0E0E0
 `;
 
 export const CommentContent = styled.p`
@@ -36,9 +35,7 @@ export const CommentContent = styled.p`
 export const CommentUser = styled.p`
 font-size: 12px;
 color: #6F6F6F;
-/* font-family: IBM Plex Sans; */
 font-weight: 400;
-line-height: 16px;
 `;
 
 export const CommentButtons = styled.div`
@@ -48,8 +45,8 @@ export const CommentButtons = styled.div`
 `;
 
 export const CommentButton = styled.button`
-  background-color: #f0f0f0;
-  border: none;
+border: 0.8px solid #ECECEC;
+background-color: transparent;
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 14px;
@@ -66,11 +63,32 @@ export const CommentCount = styled.span`
 
 export const NewCommentContainer = styled.div`
   margin-top: 20px;
+  width: 100%;
+`;
+
+export const LikeDislike = styled.div`
+border: 0.8px solid #ECECEC;
+
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  align-items: center;
+  button{
+    border: none;
+background-color: transparent;
+  }
 `;
 
 export const NewCommentInput = styled.input`
-  width: 100%;
-  padding: 10px;
+  width: 97%;
+  padding-bottom: 8rem;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -80,24 +98,27 @@ export const NewCommentInput = styled.input`
 `;
 
 export const SolidButton = styled.button`
-  /* padding: 10px 20px; */
   margin: 5px;
   background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 365px;
+  width: 100%;
   height: 51px;
   top: 587px;
   left: 29px;
-  /* padding: 13px 133px 13px 133px; */
-  border-radius: 27px;
+  border-radius: 12px;
   gap: 10px;
-  /* font-family: Noto Sans; */
   font-size: 18px;
   font-weight: 700;
-  line-height: 25px;
-  letter-spacing: 0em;
   text-align: center;
+`;
+
+export const Line = styled.div`
+border: none;
+margin: 10% 0;
+    width: 97%;
+    height: 1px;
+    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%), #ACACAC;
 `;

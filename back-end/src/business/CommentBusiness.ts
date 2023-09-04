@@ -1,13 +1,7 @@
-import { CreatePostInput, CreatePostOutput } from "../dtos/post/createPost.dto";
 import { IdGenerator } from "../services/IdGenerator";
 import { TokenManager, TokenPayload } from "../services/TokenManager";
 import { UnauthorizedError } from "../erros/UnauthorizedError";
-import { LikeDislikeDB, POST_LIKE, Post } from "../models/Post";
-import { GetPostInput, GetPostOutput } from "../dtos/post/getPost.dto";
 import { NotFoundError } from "../erros/NotFoundError";
-import { ForbiddenError } from "../erros/ForbiddenError";
-import { USER_ROLES } from "../models/User";
-import { LikeOrDislikePostInput, LikeOrDislikePostOutput } from "../dtos/post/likeOrDislikePost.dto";
 import { CommentDatabase } from "../database/CommentDatabase";
 import { CreateCommentInput, CreateCommentOutput } from "../dtos/comment/createComment.dto";
 import { GetCommentInput, GetCommentOutput } from "../dtos/comment/getComment.dto";

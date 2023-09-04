@@ -20,7 +20,7 @@ export const Subtitle = styled.p`
   margin-top: -6%;
 `;
 
-export const Form = styled.form`
+export const Form = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;

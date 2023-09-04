@@ -19,9 +19,8 @@ export const LoginPage = () => {
         password: form.password
       }
       const res = await axios.post(`${BASE_URL}/users/login`, body);
-        console.log(res)
-        localStorage.setItem("token", res.data.token)
-      // cleanForm();
+      console.log(res)
+      localStorage.setItem("token", res.data.token)
       goToHome(navigate)
 
     } catch (error) {
@@ -36,29 +35,31 @@ export const LoginPage = () => {
         <img src={logo} />
         <Title>LabEddit</Title>
         <Subtitle>O projeto de rede social da Labenu</Subtitle>
-        <Form onSubmit={enviaLogin}>
-          <Input placeholder="Email" 
-          type="email" 
-          name="email" 
-          required 
-          value={form.email} 
-          onChange={onChange} 
-          />
-          <Input placeholder="Password" 
-          type="password" 
-          name="password" 
-          required 
-          value={form.password} 
-          onChange={onChange} 
-          />
+        <form onSubmit={enviaLogin}>
+          <Form >
+            <Input placeholder="Email"
+              type="email"
+              name="email"
+              required
+              value={form.email}
+              onChange={onChange}
+            />
+            <Input placeholder="Password"
+              type="password"
+              name="password"
+              required
+              value={form.password}
+              onChange={onChange}
+            />
+
           </Form>
           <ButtonContainer>
             <SolidButton>Continuar</SolidButton>
             <Line></Line>
-            
+
             <OutlinedButton onClick={() => goToSignUpPage(navigate)}>Crie uma conta!</OutlinedButton>
           </ButtonContainer>
-        
+        </form>
       </Container>
     </>
   )

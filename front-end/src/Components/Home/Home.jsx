@@ -3,10 +3,10 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/BASE_URL";
 import { goToLoginPage } from "../../router/Coordinator";
 import { Header } from "../Header/Header";
-import { HeaderButton } from "./HomeStyled";
+import { HeaderButton, LikeDislike } from "./HomeStyled";
 import { useEffect, useState } from "react";
 import {
-    Container,
+  Container,
   CommentList,
   CommentItem,
   CommentContent,
@@ -15,6 +15,7 @@ import {
   SolidButton,
   NewCommentContainer,
   NewCommentInput,
+  Line,
   CommentUser
 } from "./HomeStyled";
 import FaThumbsUp from "../../assets/like.svg";
@@ -22,7 +23,7 @@ import FaThumbsDown from "../../assets/dislike.svg";
 import FaComment from "../../assets/comment.svg";
 import useProtectedPage from "../../hooks/useProtectedPage";
 
-export const Home = () => {      
+export const Home = () => {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
@@ -37,7 +38,7 @@ export const Home = () => {
 
   const [posts, setPosts] = useState([]);
 
-  const logout =() => {
+  const logout = () => {
     localStorage.removeItem("token")
     goToLoginPage(navigate)
   };
@@ -45,11 +46,24 @@ export const Home = () => {
   useEffect(() => {
     getPosts();
   }, []);
-  
+
   const getPosts = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/posts/`, config);
-      setPosts(response.data);
+      const postsData = response.data;
+
+      const postsWithCommentCount = await Promise.all(
+        postsData.map(async (post) => {
+          const commentsResponse = await getComments(post.id);
+          console.log(commentsResponse)
+          return {
+            ...post,
+            commentCount: commentsResponse.length,
+          };
+        })
+      );
+
+      setPosts(postsWithCommentCount);
     } catch (error) {
       console.log(error.response);
     }
@@ -59,7 +73,7 @@ export const Home = () => {
     try {
       const body = {
         content: newPost
-    }
+      }
       const response = await axios.post(`${BASE_URL}/posts/`, body, config);
       getPosts()
     } catch (error) {
@@ -71,7 +85,7 @@ export const Home = () => {
     try {
       const body = {
         like: true
-    }
+      }
       const response = await axios.put(`${BASE_URL}/posts/${id}/like`, body, config);
       getPosts()
     } catch (error) {
@@ -83,28 +97,19 @@ export const Home = () => {
     try {
       const body = {
         like: false
-    }
+      }
       const response = await axios.put(`${BASE_URL}/posts/${id}/like`, body, config);
       getPosts()
     } catch (error) {
       console.log(error.response);
     }
   };
-  
-  // const getComments = async (id) => {
-  //   try {
-  //     const response = await axios.get(`${BASE_URL}/comments/${id}`, config);
-  //     setPosts(response.data);
-  //     console.log(response.data)
-  //   } catch (error) {
-  //     console.log(error.response);
-  //   }
-  // };
 
   const getComments = async (id) => {
     try {
       const response = await axios.get(`${BASE_URL}/comments/${id}`, config);
       setComments(response.data)
+      return response.data
     } catch (error) {
       console.log(error.response);
       return [];
@@ -115,7 +120,7 @@ export const Home = () => {
     try {
       const body = {
         content: newComment
-    }
+      }
       const response = await axios.post(`${BASE_URL}/comments/${id}`, body, config);
       getComments(id);
     } catch (error) {
@@ -127,7 +132,7 @@ export const Home = () => {
     try {
       const body = {
         like: true
-    }
+      }
       const response = await axios.put(`${BASE_URL}/comments/${id}/like`, body, config);
       getComments(postId)
     } catch (error) {
@@ -139,7 +144,7 @@ export const Home = () => {
     try {
       const body = {
         like: false
-    }
+      }
       const response = await axios.put(`${BASE_URL}/comments/${id}/like`, body, config);
       getComments(postId)
     } catch (error) {
@@ -148,9 +153,9 @@ export const Home = () => {
   };
 
   const [newPost, setNewPost] = useState("");
-    const [newComment, setNewComment] = useState("");
-    const [comments, setComments] = useState([]);
-    const [expandedPostId, setExpandedPostId] = useState(null);
+  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]);
+  const [expandedPostId, setExpandedPostId] = useState(null);
 
   const handleNewCommentChange = (event) => {
     setNewComment(event.target.value);
@@ -162,16 +167,16 @@ export const Home = () => {
 
   const toggleComments = async (postId) => {
     if (expandedPostId === postId) {
-      setExpandedPostId(null); // Close comments if already expanded
-      setComments([]); // Clear comments when collapsing
+      setExpandedPostId(null);
+      setComments([]);
     } else {
-      setExpandedPostId(postId); // Expand comments for this post
+      setExpandedPostId(postId);
       getComments(postId);
     }
   };
 
-    return (
-      <>
+  return (
+    <>
       <Header />
       <HeaderButton onClick={logout}>Logout</HeaderButton>
       <Container>
@@ -182,21 +187,25 @@ export const Home = () => {
             onChange={handleNewPostChange}
           />
           <SolidButton onClick={createPost}>Postar</SolidButton>
+          <Line></Line>
         </NewCommentContainer>
         <CommentList>
           {posts.map((post) => (
             <CommentItem key={post.id}>
-              <CommentUser>{post.creator.name}</CommentUser>
+              <CommentUser>Enviado por: {post.creator.name}</CommentUser>
               <CommentContent>{post.content}</CommentContent>
+
               <CommentButtons>
-                <CommentButton onClick={() => likePost(post.id)}>
-                  <img src={FaThumbsUp} /> {post.likes}
-                </CommentButton>
-                <CommentButton onClick={() => dislikePost(post.id)}>
-                  <img src={FaThumbsDown} /> {post.dislikes}
-                </CommentButton>
+                <LikeDislike>
+                  <button onClick={() => likePost(post.id)}>
+                    <img src={FaThumbsUp} /> {post.likes - post.dislikes}
+                  </button>
+                  <button onClick={() => dislikePost(post.id)}>
+                    <img src={FaThumbsDown} />
+                  </button>
+                </LikeDislike>
                 <CommentButton onClick={() => toggleComments(post.id)}>
-                  <img src={FaComment} /> {post.comments}
+                  <img src={FaComment} /> {post.commentCount}
                 </CommentButton>
               </CommentButtons>
 
@@ -204,25 +213,28 @@ export const Home = () => {
                 <div>
                   {comments.map((comment) => (
                     <CommentItem key={comment.id}>
-                    <CommentUser>{comment.creator.name}</CommentUser>
-                    <CommentContent>{comment.content}</CommentContent>
-                    <CommentButtons>
-                      <CommentButton onClick={() => likeComment(comment.id, post.id)}>
-                        <img src={FaThumbsUp} /> {comment.likes}
-                      </CommentButton>
-                      <CommentButton onClick={() => dislikeComment(comment.id, post.id)}>
-                        <img src={FaThumbsDown} /> {comment.dislikes}
-                      </CommentButton>
-                    </CommentButtons>
-                  </CommentItem>
+                      <CommentUser>{comment.creator.name}</CommentUser>
+                      <CommentContent>{comment.content}</CommentContent>
+                      <CommentButtons>
+                        <LikeDislike>
+                          <button onClick={() => likeComment(comment.id, post.id)}>
+                            <img src={FaThumbsUp} /> {comment.likes - comment.dislikes}
+                          </button>
+                          <button onClick={() => dislikeComment(comment.id, post.id)}>
+                            <img src={FaThumbsDown} />
+                          </button>
+                        </LikeDislike>
+                      </CommentButtons>
+                    </CommentItem>
                   ))}
                   <NewCommentContainer>
                     <NewCommentInput
-                      placeholder="Escreva um comentário..."
-                    value={newComment}
-                    onChange={handleNewCommentChange}
+                      placeholder="Adicionar um comentário..."
+                      value={newComment}
+                      onChange={handleNewCommentChange}
                     />
-                    <SolidButton onClick={() => createComment(post.id)}>Postar</SolidButton>
+                    <SolidButton onClick={() => createComment(post.id)}>Responder</SolidButton>
+                    <Line></Line>
                   </NewCommentContainer>
                 </div>
               )}

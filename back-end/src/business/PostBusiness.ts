@@ -5,11 +5,7 @@ import { TokenManager, TokenPayload } from "../services/TokenManager";
 import { UnauthorizedError } from "../erros/UnauthorizedError";
 import { LikeDislikeDB, POST_LIKE, Post } from "../models/Post";
 import { GetPostInput, GetPostOutput } from "../dtos/post/getPost.dto";
-import { EditPostInput, EditPostOutput } from "../dtos/post/editPost.dto";
 import { NotFoundError } from "../erros/NotFoundError";
-import { ForbiddenError } from "../erros/ForbiddenError";
-import { DeletePostInput, DeletePostOutput } from "../dtos/post/deletePost.dto";
-import { USER_ROLES } from "../models/User";
 import { LikeOrDislikePostInput, LikeOrDislikePostOutput } from "../dtos/post/likeOrDislikePost.dto";
 
 export class PostBusiness {
@@ -75,70 +71,6 @@ export class PostBusiness {
         const output: GetPostOutput = posts
         return output
     }
-
-    // public editPost = async (input: EditPostInput): Promise<EditPostOutput> => {
-    //     const { content, token, idToEdit } = input
-
-    //     const payload = this.tokenManager.getPayload(token)
-
-    //     if (!payload) {
-    //         throw new UnauthorizedError()
-    //     }
-
-    //     const postDB = await this.postDatabase.findPostById(idToEdit)
-    //     if (!postDB) {
-    //         throw new NotFoundError("Post com essa id não existe")
-    //     }
-
-    //     if (payload.id !== postDB.creator_id) {
-    //         throw new ForbiddenError("somente quem criou o post pode editá-lo")
-    //     }
-
-    //     const post = new Post(
-    //         postDB.id,
-    //         postDB.content,
-    //         postDB.likes,
-    //         postDB.dislikes,
-    //         postDB.created_at,
-    //         postDB.updated_at,
-    //         postDB.creator_id,
-    //         payload.name
-    //     )
-
-    //     post.setContent(content)
-
-    //     const updatedPostDB = post.toPostDB()
-    //     await this.postDatabase.updatePost(updatedPostDB)
-
-    //     const output: EditPostOutput = undefined
-    //     return output
-    // }
-
-    // public deletePost = async (input: DeletePostInput): Promise<DeletePostOutput> => {
-    //     const { token, idToDelete } = input
-
-    //     const payload = this.tokenManager.getPayload(token)
-
-    //     if (!payload) {
-    //         throw new UnauthorizedError()
-    //     }
-
-    //     const postDB = await this.postDatabase.findPostById(idToDelete)
-    //     if (!postDB) {
-    //         throw new NotFoundError("Post com essa id não existe")
-    //     }
-
-    //     if (payload.role !== USER_ROLES.ADMIN) {
-    //         if (payload.id !== postDB.creator_id) {
-    //             throw new ForbiddenError("somente quem criou o post pode deletá-lo")
-    //         }
-    //     }
-
-    //     await this.postDatabase.deletePost(idToDelete)
-
-    //     const output: DeletePostOutput = undefined
-    //     return output
-    // }
 
     public likeOrDislikePost = async (input: LikeOrDislikePostInput): Promise<LikeOrDislikePostOutput> => {
         const { token, postId, like } = input

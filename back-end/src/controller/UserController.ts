@@ -8,10 +8,10 @@ import { LoginSchema } from '../dtos/user/login.dto';
 export class UserController {
     constructor(
         private userBusiness: UserBusiness
-    ){}
+    ) { }
 
     public signup = async (req: Request, res: Response) => {
-        try{
+        try {
             const input = SignupSchema.parse({
                 name: req.body.name,
                 email: req.body.email,
@@ -25,7 +25,7 @@ export class UserController {
         } catch (error) {
             console.log(error)
 
-            if(error instanceof ZodError) {
+            if (error instanceof ZodError) {
                 res.status(400).send(error.issues)
             } else if (error instanceof BaseError) {
                 res.status(error.statusCode).send(error.message)
@@ -36,7 +36,7 @@ export class UserController {
     }
 
     public login = async (req: Request, res: Response) => {
-        try{
+        try {
             const input = LoginSchema.parse({
                 email: req.body.email,
                 password: req.body.password
@@ -49,7 +49,7 @@ export class UserController {
         } catch (error) {
             console.log(error)
 
-            if(error instanceof ZodError) {
+            if (error instanceof ZodError) {
                 res.status(400).send(error.issues)
             } else if (error instanceof BaseError) {
                 res.status(error.statusCode).send(error.message)

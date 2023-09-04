@@ -52,10 +52,10 @@ VALUES
 ('u002', 'p001', 1);
 
 UPDATE posts
-SET dislikes=2
+SET dislikes=0
 WHERE id='p002';
 
-DROP TABLE post_comments
+DROP TABLE posts
 
 CREATE TABLE post_comments (
     id TEXT PRIMARY KEY UNIQUE NOT NULL,
