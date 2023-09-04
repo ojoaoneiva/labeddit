@@ -13,15 +13,15 @@ The "Labeddit" project aims to build a fullstack website, with a frontend of a s
 
 ## Functionalities:
   - [x]   <strong>Login Page:</strong> The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
-- [x]  Sign up Page: The user can creat an account (with email that haven't been used before), and the app will generate an acess token and go to the Feed page.
-- [x]  Feed page: Only authorized to be seen if a valid user is logged and the JWT token. The page shows all the posts created by all users.
-- [x]  Like or dislike: The user can like or dislike a post or a comment.
-- [x]  Create post or comment: The user can create on the textfield a new post, or can comment on an existing post.
-- [x]  Layered Architecture: The app's structure was built and organized with layered architecture to make the code more organized and for its reusability, maintainability and scalability.
-- [x]  Frontend + Api: Integration with the backend API, using React, axios and endpoints that receives data, based on the API's documentation.
-- [x]  React Router: Navigation between pages with React Router.
-- [x]  Hashed passwords: All the passwords are hashed using BcryptJS before its storage on the databse, so the information is protected.
-- [x]  Database: All the users, posts, comments and likes/dislikes information are storaged on an SQLite database in the backend.
+- [x]  <strong>Sign up Page:</strong> The user can creat an account (with email that haven't been used before), and the app will generate an acess token and go to the Feed page.
+- [x]  <strong>Feed page:</strong> Only authorized to be seen if a valid user is logged and the JWT token. The page shows all the posts created by all users.
+- [x]  <strong>Like or dislike:</strong> The user can like or dislike a post or a comment.
+- [x]  <strong>Create post or comment:</strong> The user can create on the textfield a new post, or can comment on an existing post.
+- [x]  <strong>Layered Architecture:</strong> The app's structure was built and organized with layered architecture to make the code more organized and for its reusability, maintainability and scalability.
+- [x]  <strong>Frontend + Api:</strong> Integration with the backend API, using React, axios and endpoints that receives data, based on the API's documentation.
+- [x]  <strong>React Router:</strong> Navigation between pages with React Router.
+- [x]  <strong>Hashed passwords:</strong> All the passwords are hashed using BcryptJS before its storage on the databse, so the information is protected.
+- [x]  <strong>Database:</strong> All the users, posts, comments and likes/dislikes information are storaged on an SQLite database in the backend.
 ---
 
 ## Deploy:
