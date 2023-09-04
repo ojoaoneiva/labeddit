@@ -1,6 +1,7 @@
-export interface PostDB {
+export interface CommentDB {
     id: string,
     creator_id: string,
+    post_id: string,
     content: string,
     likes: number,
     dislikes: number,
@@ -8,8 +9,9 @@ export interface PostDB {
     updated_at: string,
 }
 
-export interface PostDBandCreators {
+export interface CommentDBandCreators {
     id: string,
+    post_id: string,
     content: string,
     likes: number,
     dislikes: number,
@@ -19,8 +21,9 @@ export interface PostDBandCreators {
     creator_name: string
 }
 
-export interface PostModel {
+export interface CommentModel {
     id: string,
+    postId: string,
     content: string,
     likes: number,
     dislikes: number,
@@ -32,9 +35,10 @@ export interface PostModel {
     }
 }
 
-export class Post {
+export class Comment {
     constructor(
         private id: string,
+        private postId: string,
         private content: string,
         private likes: number,
         private dislikes: number,
@@ -50,6 +54,14 @@ export class Post {
 
     public setId(value: string): void {
         this.id = value
+    }
+
+    public getUserId(): string {
+        return this.postId
+    }
+
+    public setUserId(value: string): void {
+        this.postId = value
     }
 
     public getContent(): string {
@@ -116,10 +128,11 @@ export class Post {
         this.creatorId = value
     }
 
-    public toPostDB(): PostDB {
+    public toCommentDB(): CommentDB {
         return {
             id: this.id,
             creator_id: this.creatorId,
+            post_id: this.postId,
             content: this.content,
             likes: this.likes,
             dislikes: this.dislikes,
@@ -128,9 +141,10 @@ export class Post {
         }
     }
 
-    public toBusinessModel(): PostModel {
+    public toBusinessModel(): CommentModel {
         return {
             id: this.id,
+            postId: this.postId,
             content: this.content,
             likes: this.likes,
             dislikes: this.dislikes,
@@ -144,13 +158,13 @@ export class Post {
     }
 }
 
-export interface LikeDislikeDB {
+export interface LikeDislikeCommentDB {
     user_id: string,
-    post_id: string,
+    comment_id: string,
     like: number
 }
 
-export enum POST_LIKE {
+export enum COMMENT_LIKE {
     ALREADY_LIKED = "ALREADY LIKED",
     ALREADY_DISLIKED = "ALREADY DISLIKED"
 }

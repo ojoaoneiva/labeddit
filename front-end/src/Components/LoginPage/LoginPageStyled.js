@@ -9,24 +9,24 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 10px;
-  /* font-family: "IBM Plex Sans"; */
-  font-size: 36px;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 47px;
-  letter-spacing: 0em;
-  text-align: left;
   color: #373737;
 `;
 
 export const Subtitle = styled.p`
   font-size: 16px;
-  margin-bottom: 20px;
-  /* font-family: IBM Plex Sans; */
   font-weight: 300;
-  line-height: 21px;
-  letter-spacing: 0em;
-  text-align: center;
+  margin-top: -6%;
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8%;
+  margin-top: 20%;
 `;
 
 export const Input = styled.input`
@@ -43,6 +43,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 `;
 
 export const SolidButton = styled.button`
@@ -60,7 +61,6 @@ export const SolidButton = styled.button`
   padding: 13px 133px 13px 133px;
   border-radius: 27px;
   gap: 10px;
-  /* font-family: Noto Sans; */
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
@@ -69,19 +69,13 @@ export const SolidButton = styled.button`
 `;
 
 export const Line = styled.div`
-width: 363.0055158939032px;
-top: 656px;
-left: 33px;
-/* border: 1px; */
-/* background: linear-gradient(0deg, #ACACAC, #ACACAC),
-linear-gradient(90deg, #FF6489 0%, #F9B24E 100%); */
-border: 1px solid;
-border-image-source: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%),
-linear-gradient(0deg, #ACACAC, #ACACAC);
+border: none;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%), #ACACAC;
 `;
 
 export const OutlinedButton = styled.button`
-  /* padding: 10px 20px; */
   margin: 5px;
   background-color: transparent;
   color: #FE7E02;
@@ -91,16 +85,13 @@ export const OutlinedButton = styled.button`
   height: 51px;
   top: 676px;
   left: 29px;
-  /* padding: 13px 133px 13px 133px; */
   border-radius: 27px;
   border: 1px;
   gap: 10px;
   border: 1px solid #FE7E02;
-  /* font-family: Noto Sans; */
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
   letter-spacing: 0em;
   text-align: center;
-
 `;

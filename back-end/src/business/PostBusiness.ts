@@ -76,69 +76,69 @@ export class PostBusiness {
         return output
     }
 
-    public editPost = async (input: EditPostInput): Promise<EditPostOutput> => {
-        const { content, token, idToEdit } = input
+    // public editPost = async (input: EditPostInput): Promise<EditPostOutput> => {
+    //     const { content, token, idToEdit } = input
 
-        const payload = this.tokenManager.getPayload(token)
+    //     const payload = this.tokenManager.getPayload(token)
 
-        if (!payload) {
-            throw new UnauthorizedError()
-        }
+    //     if (!payload) {
+    //         throw new UnauthorizedError()
+    //     }
 
-        const postDB = await this.postDatabase.findPostById(idToEdit)
-        if (!postDB) {
-            throw new NotFoundError("Post com essa id não existe")
-        }
+    //     const postDB = await this.postDatabase.findPostById(idToEdit)
+    //     if (!postDB) {
+    //         throw new NotFoundError("Post com essa id não existe")
+    //     }
 
-        if (payload.id !== postDB.creator_id) {
-            throw new ForbiddenError("somente quem criou o post pode editá-lo")
-        }
+    //     if (payload.id !== postDB.creator_id) {
+    //         throw new ForbiddenError("somente quem criou o post pode editá-lo")
+    //     }
 
-        const post = new Post(
-            postDB.id,
-            postDB.content,
-            postDB.likes,
-            postDB.dislikes,
-            postDB.created_at,
-            postDB.updated_at,
-            postDB.creator_id,
-            payload.name
-        )
+    //     const post = new Post(
+    //         postDB.id,
+    //         postDB.content,
+    //         postDB.likes,
+    //         postDB.dislikes,
+    //         postDB.created_at,
+    //         postDB.updated_at,
+    //         postDB.creator_id,
+    //         payload.name
+    //     )
 
-        post.setContent(content)
+    //     post.setContent(content)
 
-        const updatedPostDB = post.toPostDB()
-        await this.postDatabase.updatePost(updatedPostDB)
+    //     const updatedPostDB = post.toPostDB()
+    //     await this.postDatabase.updatePost(updatedPostDB)
 
-        const output: EditPostOutput = undefined
-        return output
-    }
+    //     const output: EditPostOutput = undefined
+    //     return output
+    // }
 
-    public deletePost = async (input: DeletePostInput): Promise<DeletePostOutput> => {
-        const { token, idToDelete } = input
+    // public deletePost = async (input: DeletePostInput): Promise<DeletePostOutput> => {
+    //     const { token, idToDelete } = input
 
-        const payload = this.tokenManager.getPayload(token)
+    //     const payload = this.tokenManager.getPayload(token)
 
-        if (!payload) {
-            throw new UnauthorizedError()
-        }
+    //     if (!payload) {
+    //         throw new UnauthorizedError()
+    //     }
 
-        const postDB = await this.postDatabase.findPostById(idToDelete)
-        if (!postDB) {
-            throw new NotFoundError("Post com essa id não existe")
-        }
+    //     const postDB = await this.postDatabase.findPostById(idToDelete)
+    //     if (!postDB) {
+    //         throw new NotFoundError("Post com essa id não existe")
+    //     }
 
-        if (payload.role !== USER_ROLES.ADMIN) {
-            if (payload.id !== postDB.creator_id) {
-                throw new ForbiddenError("somente quem criou o post pode deletá-lo")
-            }
-        }
+    //     if (payload.role !== USER_ROLES.ADMIN) {
+    //         if (payload.id !== postDB.creator_id) {
+    //             throw new ForbiddenError("somente quem criou o post pode deletá-lo")
+    //         }
+    //     }
 
-        await this.postDatabase.deletePost(idToDelete)
+    //     await this.postDatabase.deletePost(idToDelete)
 
-        const output: DeletePostOutput = undefined
-        return output
-    }
+    //     const output: DeletePostOutput = undefined
+    //     return output
+    // }
 
     public likeOrDislikePost = async (input: LikeOrDislikePostInput): Promise<LikeOrDislikePostOutput> => {
         const { token, postId, like } = input
@@ -191,6 +191,7 @@ export class PostBusiness {
                 post.removeDislike()
             } else {
                 await this.postDatabase.updateLikeDislike(likeDislikeDB)
+                post.removeDislike()
                 post.addLike()
             }
         } else {

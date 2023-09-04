@@ -17,7 +17,7 @@ VALUES
 
 CREATE TABLE posts (
     id TEXT PRIMARY KEY UNIQUE NOT NULL,
-    creator_id TEXT UNIQUE NOT NULL,
+    creator_id TEXT NOT NULL,
     content TEXT NOT NULL,
     likes INTEGER DEFAULT(0) NOT NULL,
     dislikes INTEGER DEFAULT(0) NOT NULL,
@@ -52,5 +52,48 @@ VALUES
 ('u002', 'p001', 1);
 
 UPDATE posts
-SET likes=2
-WHERE id='p001';
+SET dislikes=2
+WHERE id='p002';
+
+DROP TABLE post_comments
+
+CREATE TABLE post_comments (
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    creator_id TEXT NOT NULL,
+    post_id TEXT NOT NULL,
+    content TEXT NOT NULL,
+    likes INTEGER DEFAULT(0) NOT NULL,
+    dislikes INTEGER DEFAULT(0) NOT NULL,
+    created_at TEXT DEFAULT (DATETIME()) NOT NULL,
+    updated_at TEXT DEFAULT (DATETIME()) NOT NULL,
+    FOREIGN KEY (creator_id) REFERENCES users (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    FOREIGN KEY (post_id) REFERENCES posts (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+INSERT INTO post_comments (id, creator_id, post_id, content)
+VALUES 
+('c001','u002', 'p001', 'Parabens pela postagem'),
+('c002','u003', 'p002', 'Concordo com você'),
+('c003','u002', 'p001', 'Gostei!');
+
+CREATE TABLE likes_dislikes_comments (
+    user_id TEXT NOT NULL,
+    comment_id TEXT NOT NULL,
+    like INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+    FOREIGN KEY (comment_id) REFERENCES post_comments (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
+
+INSERT INTO likes_dislikes_comments (user_id, comment_id, like)
+VALUES 
+('u002', 'c001', 1),
+('u003', 'c002', 0),
+('u002', 'c001', 1);
