@@ -1,7 +1,9 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
+
 [Front-end repository](https://github.com/ojoaoneiva/labeddit/tree/main/front-end)
+
 [Back-end repository](https://github.com/ojoaoneiva/labeddit/tree/main/back-end)
 
 ## About:
@@ -10,7 +12,7 @@ The "Labeddit" project aims to build a fullstack website, with a frontend of a s
 ---
 
 ## Functionalities:
-  - [x]   Login Page: The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
+  - [x]   <h3>Login Page:</h3> The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
 - [x]  Sign up Page: The user can creat an account (with email that haven't been used before), and the app will generate an acess token and go to the Feed page.
 - [x]  Feed page: Only authorized to be seen if a valid user is logged and the JWT token. The page shows all the posts created by all users.
 - [x]  Like or dislike: The user can like or dislike a post or a comment.
