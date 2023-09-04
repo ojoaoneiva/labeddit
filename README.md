@@ -6,18 +6,20 @@
 
 ## About:
 The "Labeddit" project aims to build a fullstack website, with a frontend of a small social media plataform and its backend applicaction that builds an API with data source for users, posts, post's comments and likes. The front-end is mobile-first and consists on three pages: Home, login and signup, following the design provided by Figma.
+---
 
 ## Functionalities:
-- Login Page: The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
-- Sign up Page: The user can creat an account (with email that haven't been used before), and the app will generate an acess token and go to the Feed page.
-- Feed page: Only authorized to be seen if a valid user is logged and the JWT token. The page shows all the posts created by all users.
-- Like or dislike: The user can like or dislike a post or a comment.
-- Create post or comment: The user can create on the textfield a new post, or can comment on an existing post.
-- Layered Architecture: The app's structure was built and organized with layered architecture to make the code more organized and for its reusability, maintainability and scalability.
-- Frontend + Api: Integration with the backend API, using React, axios and endpoints that receives data, based on the API's documentation.
-- React Router: Navigation between pages with React Router.
-- Hashed passwords: All the passwords are hashed using BcryptJS before its storage on the databse, so the information is protected.
-- Database: All the users, posts, comments and likes/dislikes information are storaged on an SQLite database in the backend.
+- [x]  Login Page: The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
+- [x]  Sign up Page: The user can creat an account (with email that haven't been used before), and the app will generate an acess token and go to the Feed page.
+- [x]  Feed page: Only authorized to be seen if a valid user is logged and the JWT token. The page shows all the posts created by all users.
+- [x]  Like or dislike: The user can like or dislike a post or a comment.
+- [x]  Create post or comment: The user can create on the textfield a new post, or can comment on an existing post.
+- [x]  Layered Architecture: The app's structure was built and organized with layered architecture to make the code more organized and for its reusability, maintainability and scalability.
+- [x]  Frontend + Api: Integration with the backend API, using React, axios and endpoints that receives data, based on the API's documentation.
+- [x]  React Router: Navigation between pages with React Router.
+- [x]  Hashed passwords: All the passwords are hashed using BcryptJS before its storage on the databse, so the information is protected.
+- [x]  Database: All the users, posts, comments and likes/dislikes information are storaged on an SQLite database in the backend.
+---
 
 ## Deploy:
 https://labeddit-joaoneiva.surge.sh/
@@ -59,7 +61,7 @@ The app is already deployed, but if you want to run the project in your machine,
 
 # The server will start on localhost:3003
 ```
-
+---
 
 ## Technologies used:
 - Node JS
@@ -75,6 +77,7 @@ The app is already deployed, but if you want to run the project in your machine,
 - Axios
 - React Router
 - Styled-components
+---
 
 ## Images:
 
