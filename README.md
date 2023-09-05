@@ -1,7 +1,7 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
 <p align="center">
-  <img src="./template/src/assets/Images/github/ecommerce.gif" alt="project gif" width="600">
+  <img src="./front-end/src/assets/labeddit.gif" alt="project gif" width="500">
 </p>
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
@@ -90,24 +90,8 @@ The app's back-end is already deployed, but if you want to run the project in yo
 ## Images:
 
 <p align="center">
-  <img src="./template/src/assets/Images/github/mobile.jpg" alt="project print screen" width="600">  
-  <img src="./template/src/assets/Images/github/1.png" alt="project print screen" width="600">  
-  <img src="./template/src/assets/Images/github/2.png" alt="project print screen" width="600">  
-  <img src="./template/src/assets/Images/github/3.png" alt="project print screen" width="600">  
+  <img src="./front-end/src/assets/mobile.jpg" alt="project print screen" width="600">  
+  <img src="./front-end/src/assets/1.JPG" alt="project print screen" width="600">  
+  <img src="./front-end/src/assets/1.JPG" alt="project print screen" width="600">  
+  <img src="./front-end/src/assets/3.JPG" alt="project print screen" width="600">  
 </p>
-
-Login
-
-![login](https://github.com/ojoaoneiva/labeddit/assets/122841627/8a25f135-a40a-4425-9427-09e7c0860024)
-
-Sign Up
-
-![signup](https://github.com/ojoaoneiva/labeddit/assets/122841627/79546f4f-48b8-4c57-aa4b-011055b2f65e)
-
-Posts
-
-![home](https://github.com/ojoaoneiva/labeddit/assets/122841627/bb4f37fd-9c20-4063-9a7d-d682cc9220a6)
-
-Comments
-
-![comments](https://github.com/ojoaoneiva/labeddit/assets/122841627/4d34b583-0d42-44d0-b492-5089ea7dfc07)
