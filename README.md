@@ -1,7 +1,7 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
 <p align="center">
-  <img src="./front-end/src/assets/labeddit.gif" alt="project gif" width="500">
+  <img src="./front-end/src/assets/labeddit.gif" alt="project gif" width="200">
 </p>
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
