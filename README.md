@@ -1,7 +1,4 @@
-<div align="center">
-    
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
-</div>
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
 
@@ -12,7 +9,6 @@ Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685
 ## About:
 The "Labeddit" project aims to build a fullstack website, with a frontend of a small social media plataform and its backend applicaction that builds an API with data source for users, posts, post's comments and likes. The front-end is mobile-first and consists on three pages: Home, login and signup, following the design provided by Figma.
 
----
 
 ## Functionalities:
 - [x]   <strong>Login Page:</strong> The user can connect (if the user and email are valid and previously created) and the app will autenticat the data, and generate an acess token and go to the Feed page.
@@ -25,10 +21,12 @@ The "Labeddit" project aims to build a fullstack website, with a frontend of a s
 - [x]  <strong>React Router:</strong> Navigation between pages with React Router.
 - [x]  <strong>Hashed passwords:</strong> All the passwords are hashed using BcryptJS before its storage on the databse, so the information is protected.
 - [x]  <strong>Database:</strong> All the users, posts, comments and likes/dislikes information are storaged on an SQLite database in the backend.
----
 
-## Deploy:
+## Front-end deploy:
 https://labeddit-joaoneiva.surge.sh/
+
+## Back-end deploy:
+https://labeddit-backend-joao.onrender.com/
 
 ## How to run the front-end project:
 The app's front-end is already deployed, but if you want to run the project in your machine, follow these steps:
@@ -50,6 +48,7 @@ The app's front-end is already deployed, but if you want to run the project in y
 ```
 
 ## How to run the back-end project:
+The app's back-end is already deployed, but if you want to run the project in your machine, follow these steps:
 
 ```bash
 # Clone the project's repository, (if not already done in the front-end instructions):
@@ -66,7 +65,6 @@ The app's front-end is already deployed, but if you want to run the project in y
 
 # The server will start on localhost:3003
 ```
----
 
 ## Technologies used:
 - Node JS
@@ -84,7 +82,6 @@ The app's front-end is already deployed, but if you want to run the project in y
 - Axios
 - React Router
 - Styled-components
----
 
 ## Images:
 
