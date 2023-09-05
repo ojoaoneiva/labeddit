@@ -1,5 +1,9 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
+<p align="center">
+  <img src="./template/src/assets/Images/github/ecommerce.gif" alt="project gif" width="600">
+</p>
+
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
 
 [Front-end repository](https://github.com/ojoaoneiva/labeddit/tree/main/front-end)
@@ -84,6 +88,13 @@ The app's back-end is already deployed, but if you want to run the project in yo
 - Styled-components
 
 ## Images:
+
+<p align="center">
+  <img src="./template/src/assets/Images/github/mobile.jpg" alt="project print screen" width="600">  
+  <img src="./template/src/assets/Images/github/1.png" alt="project print screen" width="600">  
+  <img src="./template/src/assets/Images/github/2.png" alt="project print screen" width="600">  
+  <img src="./template/src/assets/Images/github/3.png" alt="project print screen" width="600">  
+</p>
 
 Login
 
