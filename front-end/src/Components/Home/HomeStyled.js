@@ -81,9 +81,11 @@ background-color: transparent;
   }
 `;
 
-export const NewCommentInput = styled.input`
+export const NewCommentInput = styled.textarea`
   width: 97%;
-  padding-bottom: 8rem;
+  height: fit-content;
+  min-height: 7rem;
+  padding-bottom: 1rem;
   padding-left: 10px;
   padding-top: 10px;
   display: flex;
