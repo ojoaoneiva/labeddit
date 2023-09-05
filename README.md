@@ -25,6 +25,7 @@ https://labeddit-joaoneiva.surge.sh/
 ## How to run the front-end project:
 The app is already deployed, but if you want to run the project in your machine, follow these steps:
 
+```js
 1. Clone the project's repository:
     git clone https://github.com/ojoaoneiva/labeddit.git
 2. Enter the front-end paste:
@@ -34,11 +35,12 @@ The app is already deployed, but if you want to run the project in your machine,
 6. Run the application:
     npm run start
 The server will start on localhost:3000
-
+```
 
 ## How to run the back-end project:
 The app is already deployed, but if you want to run the project in your machine, follow these steps:
 
+```js
 1. Clone the project's repository, (if not already done in the front-end instructions):
     git clone https://github.com/ojoaoneiva/labeddit.git
 2. Enter the back-end paste:
@@ -48,7 +50,7 @@ The app is already deployed, but if you want to run the project in your machine,
 6. Run the application in developpement mode:
     npm run dev
 The server will start on localhost:3003
-
+```
 
 ## Technologies used:
 - Node JS
