@@ -1,6 +1,6 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
-<p align="center">
+<p align="center" style="background-color: #A7A3A0; width: 600px; padding: 20px">
   <img src="./front-end/src/assets/labeddit.gif" alt="project gif" width="200">
 </p>
 
