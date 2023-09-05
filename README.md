@@ -1,8 +1,8 @@
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
 
-<div style="background-color: #a7a3a0; width: 600px; padding: 20px;">
+<p align="center">
   <img src="./front-end/src/assets/labeddit.gif" alt="project gif" width="200">
-</div>
+</p>
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
 
