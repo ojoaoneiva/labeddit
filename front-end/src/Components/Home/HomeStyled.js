@@ -12,8 +12,13 @@ export const HeaderButton = styled.button`
 `;
 
 export const Container = styled.div`
-  height: 100vh;
+  height: fit-content;
   padding: 10%;
+  max-width: 500px;
+  margin: auto;
+  @media screen and (min-width: 760px) {
+    padding-top: 60px;
+  }
 `;
 
 export const CommentList = styled.ul`
@@ -115,12 +120,16 @@ export const SolidButton = styled.button`
   font-size: 18px;
   font-weight: 700;
   text-align: center;
+  max-width: 750px;
 `;
 
 export const Line = styled.div`
 border: none;
 margin: 10% 0;
-    width: 97%;
+    width: 100%;
     height: 1px;
     background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%), #ACACAC;
+    @media screen and (min-width: 760px) {
+      margin: 20px 0;
+  }
 `;

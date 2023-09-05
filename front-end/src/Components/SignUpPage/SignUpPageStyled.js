@@ -7,6 +7,9 @@ export const Container = styled.section`
   justify-content: center;
   height: 90vh;
   padding: 10%;
+  @media screen and (min-width: 760px) {
+    padding: 30px;
+  }
 `;
 
 export const HeaderButton = styled.button`
@@ -27,6 +30,10 @@ export const Title = styled.h1`
   color: #373737;
   margin-bottom: 60%;
   margin-top: 40px;
+  @media screen and (min-width: 760px) {
+    margin-bottom: 60px;
+    margin-top: 40px;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -35,6 +42,9 @@ export const InputContainer = styled.div`
   gap: 8px;
   align-items: center;
   margin-bottom: 20%;
+  @media screen and (min-width: 760px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const Input = styled.input`

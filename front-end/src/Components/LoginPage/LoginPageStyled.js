@@ -18,6 +18,9 @@ export const Subtitle = styled.p`
   font-size: 16px;
   font-weight: 300;
   margin-top: -6%;
+  @media screen and (min-width: 760px) {
+    margin-top: 0;
+  }
 `;
 
 export const Form = styled.div`
@@ -27,6 +30,9 @@ export const Form = styled.div`
   align-items: center;
   margin-bottom: 8%;
   margin-top: 20%;
+  @media screen and (min-width: 760px) {
+    margin-top: 10px;
+  }
 `;
 
 export const Input = styled.input`

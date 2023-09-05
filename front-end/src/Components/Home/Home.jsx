@@ -36,6 +36,10 @@ export const Home = () => {
 
   useProtectedPage();
 
+  const [newPost, setNewPost] = useState("");
+  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]);
+  const [expandedPostId, setExpandedPostId] = useState(null);
   const [posts, setPosts] = useState([]);
 
   const logout = () => {
@@ -76,6 +80,7 @@ export const Home = () => {
       }
       const response = await axios.post(`${BASE_URL}/posts/`, body, config);
       getPosts()
+      setNewPost("")
     } catch (error) {
       console.log(error.response);
     }
@@ -123,6 +128,7 @@ export const Home = () => {
       }
       const response = await axios.post(`${BASE_URL}/comments/${id}`, body, config);
       getComments(id);
+      setNewComment("")
     } catch (error) {
       console.log(error.response);
     }
@@ -152,10 +158,7 @@ export const Home = () => {
     }
   };
 
-  const [newPost, setNewPost] = useState("");
-  const [newComment, setNewComment] = useState("");
-  const [comments, setComments] = useState([]);
-  const [expandedPostId, setExpandedPostId] = useState(null);
+
 
   const handleNewCommentChange = (event) => {
     setNewComment(event.target.value);
