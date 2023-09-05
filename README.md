@@ -1,4 +1,7 @@
+<div align="center">
+    
 # [Labeddit](https://labeddit-joaoneiva.surge.sh/)
+</div>
 
 Go to the API Docummentation [here](https://documenter.getpostman.com/view/27685475/2s9Y5eMeZG)
 
@@ -75,6 +78,8 @@ The app's front-end is already deployed, but if you want to run the project in y
 - BcryptJS
 - JWT
 - ZOD
+- POO
+- Layred Architecture
 - React
 - Axios
 - React Router
