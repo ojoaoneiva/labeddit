@@ -113,7 +113,7 @@ export const SolidButton = styled.button`
   cursor: pointer;
   width: 100%;
   height: 51px;
-  top: 587px;
+  top: 586px;
   left: 29px;
   border-radius: 12px;
   gap: 10px;
