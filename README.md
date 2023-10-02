@@ -71,7 +71,7 @@ The app's back-end is already deployed, but if you want to run the project in yo
 ```
 
 ## Technologies used:
-- Node JS
+- Node JS  
 - Typescript
 - Express
 - SQLite
