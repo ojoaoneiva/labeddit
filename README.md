@@ -93,8 +93,5 @@ The app's back-end is already deployed, but if you want to run the project in yo
   <img src="./front-end/src/assets/mobile.jpg" alt="project print screen" width="600">  
   <img src="./front-end/src/assets/1.JPG" alt="project print screen" width="600">  
   <img src="./front-end/src/assets/2.JPG" alt="project print screen" width="600">  
-  <img src="./front-end/src/assets/3.JPG" alt="project print screen" width="600">  
-  <img src="./front-end/src/assets/4.JPG" alt="project print screen" width="600"> 
-  <img src="./front-end/src/assets/5.JPG" alt="project print screen" width="600">
-  <img src="./front-end/src/assets/6.JPG" alt="project print screen" width="600"> 
+  <img src="./front-end/src/assets/3.JPG" alt="project print screen" width="600"> 
 </p>
